@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Box styling */
+.box {
+    background-color: #000000;
+    border: 3px solid #00f3ff;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3),
+                inset 0 0 20px rgba(0, 243, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00f3ff, transparent, #00f3ff);
+    border-radius: 25px;
+    z-index: -1;
+    animation: neonPulse 2s infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.box:hover {
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.6),
+                inset 0 0 30px rgba(0, 243, 255, 0.3);
+}
+
+.box-header {
+    color: #00f3ff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00f3ff;
+    border-bottom: 1px solid #00f3ff;
+    padding-bottom: 10px;
+}
+
+/* Box 1 - Input Target */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.target-input {
+    background-color: #000000;
+    border: 2px solid #00f3ff;
+    border-radius: 15px;
+    padding: 18px 25px;
+    color: #00f3ff;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.target-input:focus {
+    box-shadow: 0 0 25px #00f3ff;
+    border-color: #ffffff;
+}
+
+.target-input::placeholder {
+    color: rgba(0, 243, 255, 0.3);
+}
+
+.info-text {
+    color: rgba(0, 243, 255, 0.7);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Box 2 - Tombol Start */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.start-btn {
+    background-color: #000000;
+    border: 3px solid #00f3ff;
+    border-radius: 25px;
+    padding: 18px 60px;
+    color: #00f3ff;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #00f3ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn:hover {
+    background-color: #00f3ff;
+    color: #000000;
+    box-shadow: 0 0 40px #00f3ff;
+    transform: scale(1.05);
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+}
+
+.status {
+    color: #00f3ff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+/* Box 3 - Hasil Scan */
+.results-container {
+    min-height: 300px;
+    position: relative;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #00f3ff;
+    font-size: 18px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 243, 255, 0.3);
+    border-top: 4px solid #00f3ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.results-content {
+    color: #00f3ff;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: rgba(0, 243, 255, 0.5);
+    font-style: italic;
+    padding: 50px 0;
+}
+
+.result-item {
+    border-left: 3px solid #00f3ff;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: rgba(0, 243, 255, 0.05);
+    border-radius: 10px;
+}
+
+.ip-address {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.ip-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.detail-tag {
+    color: #00f3ff;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    color: #ffffff;
+}
+
+.threat-high {
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.threat-medium {
+    color: #ffaa00;
+    text-shadow: 0 0 10px #ffaa00;
+}
+
+.threat-low {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
