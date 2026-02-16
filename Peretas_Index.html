@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker IP Detector - Neon Blue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Kotak 1: Input Web Target -->
+        <div class="box" id="box1">
+            <div class="box-header">[ TARGET WEBSITE ]</div>
+            <div class="input-group">
+                <input type="url" class="target-input" id="targetInput" 
+                       placeholder="https://example.com" required>
+                <div class="info-text">Masukkan URL website yang ingin discan</div>
+            </div>
+        </div>
+
+        <!-- Kotak 2: Tombol Start -->
+        <div class="box" id="box2">
+            <div class="box-header">[ CONTROL PANEL ]</div>
+            <div class="button-container">
+                <button class="start-btn" id="startBtn">▶ START SCAN</button>
+            </div>
+            <div class="status" id="scanStatus"></div>
+        </div>
+
+        <!-- Kotak 3: Hasil Scan -->
+        <div class="box" id="box3">
+            <div class="box-header">[ SCAN RESULTS ]</div>
+            <div class="results-container" id="resultsContainer">
+                <div class="loading" id="loadingIndicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Scanning target...</span>
+                </div>
+                <div class="results-content" id="resultsContent">
+                    <!-- Hasil scan akan muncul di sini -->
+                    <div class="placeholder-text">
+                        Tekan START untuk memulai scanning
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
